@@ -1,0 +1,69 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[spanish]{babel}
+
+\begin{document}
+	\begin{titlepage}
+		\begin{center}
+			\begin{figure}
+				\centering
+				\includegraphics[scale=0.2]{US-marca-principal.png}
+			\end{figure}
+			{\large \textbf{Escuela Técnica Superior de Ingeniería Informática}}
+			\vspace{2mm}\\
+			{Ingeniería Informática. Ingeniería de Computadores.}
+			\vspace{60mm}\\
+			\begin{center}
+				{\huge \textbf{MEMORIA PRÁCTICA I}}\\[2mm]
+				{Asignatura: Sistemas Empotrados y de Tiempo Real I}\\
+				{Profesor: Gabriel Jiménez Moreno}
+			\end{center}
+			\vfill
+			{Alumno: Álvaro José Gullón Vega}
+		\end{center}
+	\end{titlepage}
+	\pagebreak
+	\tableofcontents
+	\pagebreak
+	
+	\section{Objetivos}
+	\large{
+		En esta primera práctica distinguimos dos objetivos:
+		
+	\subsection{Académico}
+		Como objetivo académico, la práctica nos introduce al sector de la programación de microcontroladores a través de la instalación y posterior uso de el entorno de desarrollo STM32CubeIDE, que se puede complementar con el simulador QEMU para realizar proyectos en los que no haya posibilidad de adquirir el hardware a usar.
+	\subsection{Práctico}
+		En cuanto al objetivo práctico, la práctica se fundamenta en dar una explicación sobre el entorno para ir familiarizándonos con él junto a unas instrucciones detalladas para la correcta instalación de este junto al simulador a usar, incluyendo nociones básicas sobre configuraciones del proyecto y cómo debemos ejecutarlo.
+	}
+	
+	\section{Introducción}
+	\large{
+		En esta práctica por motivos de calendario, se ha hecho de forma no presencial sin ninguna explicación de profesor (quitando el documento proporcionado). Como hemos mencionado anteriormente, esta práctica trata sobre la introducción al sistema de desarrollo STM32CubeIDE, que será el entorno de desarrollo que usaremos durante todo el curso, junto a la instalación de un simulador llamado QEMU para la implementación de aplicaciones cuando no tenemos recursos hardware disponibles.\\
+
+		La placa con la que vamos a probar el sistema es la STM32 Cortex M0, pese a que en el resto de las prácticas vamos a usar una STM32 Cortex M4 con gran cantidad de periféricos. Como parte esencial de esta y de todas las prácticas, usaremos STM32CubeIDE, que está basado en Eclipse, para programar nuestros microcontroladores.\\
+		
+		Vemos diferenciadas varias fases o etapas a lo largo de la práctica que nos indican el desarrollo que debemos llevar. En la primera fase tenemos que llevar a cabo la instalación del entorno de desarrollo STM32CubeIDE. Es una mezcla de varias herramientas de desarrollo que han ido evolucionando e integrándose
+		en un solo entorno, SW4STM32 + Atollic TrueStudio + STM32CubeMX, los primeros eran entornos de desarrollo IDE
+		y el último un generador automático de código de configuración de los microcontroladores STM. Particularmente, he usado la última versión disponible en la página web del fabricante, la versión 1.17.0.\\
+
+		Tras esto, nos disponemos a comenzar con la creación del proyecto y posteriormente las fases contenidas en la práctica recogidas en el documento a descargar de la Enseñanza Virtual.
+	}
+	
+	\section{Desarrollo de la práctica}
+	\subsection{Fase 1: Instalación del sistema de desarrollo STM32CubeIDE y del simulador QEMU}
+	En esta primera fase, vamos a instalar el sistema de desarrollo en nuestro equipo. Para ello, entramos en la página web del fabricante y procedemos a descargarnos, en mi caso, la versión 1.17.0. Una vez descargado el instalador, lo ejecutamos e instalamos. Al finalizar, abrimos la aplicación y nos falta un último paso, nos dirigimos a la pestaña \textit{Help > Eclipse Marketplace} y buscamos 
+	
+	\subsection{Fase 2: Encender un LED}
+	podemos comenzar con la segunda fase tras proceder con la correcta instalación de el entorno de desarrollo y los ajustes necesarios para el funcionamiento de este, se nos propone probar su funcionamiento desarrollando un simple programa que nos permite encender y apagar un LED de la placa en cuestión. En la guía nos indica cómo crear un proyecto para este caso y la placa que debemos usar, que se trata de la \textbf{NUCLEO-F103RB}. Es importante que cuando al crear el proyecto nos pregunte sobre si queremos inicializar los periféricos debemos decir que sí, de esta forma existe un determinado pin, como el del LED que queremos encender, se coloca por defecto como salida.
+	
+	\subsection{Fase 3: Utilizar la interrupción de pulsar botón para cambiar el estado del LED}
+	
+	\subsection{Fase 4: Hacer que le LED se encienda y apague a un determinado ritmo}
+	
+	\section{Contestación de preguntas}
+
+
+	\section{Conclusiones}
+\end{document}

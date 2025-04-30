@@ -1,0 +1,42 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[spanish]{babel}
+
+\begin{document}
+	\begin{titlepage}
+		\begin{center}
+			\begin{figure}
+				\centering
+				\includegraphics[scale=0.2]{US-marca-principal.png}
+			\end{figure}
+			{\large \textbf{Escuela Técnica Superior de Ingeniería Informática}}
+			\vspace{2mm}\\
+			{Ingeniería Informática. Ingeniería de Computadores.}
+			\vspace{60mm}\\
+			\begin{center}
+				{\huge \textbf{MEMORIA PRÁCTICA I}}\\[2mm]
+				{Asignatura: Sistemas Empotrados y de Tiempo Real I}
+			\end{center}
+			\vfill
+			{Alumno: Álvaro José Gullón Vega}
+		\end{center}
+	\end{titlepage}
+
+	\pagebreak
+
+	\tableofcontents
+
+	\pagebreak
+	
+	\section{Objetivos}
+
+	\section{Introducción}
+
+	\section{Desarrollo de la práctica}
+
+	\section{Contestación de preguntas}
+
+	\section{Conclusiones}
+\end{document}

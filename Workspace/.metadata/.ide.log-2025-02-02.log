@@ -1,0 +1,48 @@
+2025-02-03 00:38:37,746 [INFO] WebApp:190 - Connection lost
+2025-02-03 00:38:38,233 [INFO] WebApp:187 - Connection restablished
+2025-02-03 00:38:40,210 [INFO] WebApp:190 - Connection lost
+2025-02-03 00:38:40,351 [INFO] WebApp:187 - Connection restablished
+2025-02-03 01:00:57,049 [INFO] ServerAccessManage:473 - Download File stm32cube_fw_f1_v180.zip
+2025-02-03 01:01:02,172 [ERROR] FileExtend:455 - File entry not found
+2025-02-03 01:01:02,172 [INFO] FileExtend:240 - Unzip File : stm32cube_fw_f1_v180.zip
+2025-02-03 01:01:02,173 [INFO] FileExtend:255 - Standard Zip Deflate
+2025-02-03 01:01:32,364 [INFO] ServerAccessManage:473 - Download File stm32cube_fw_f1_v186.zip
+2025-02-03 01:01:33,888 [INFO] FileExtend:240 - Unzip File : stm32cube_fw_f1_v186.zip
+2025-02-03 01:01:33,889 [INFO] FileExtend:255 - Standard Zip Deflate
+2025-02-03 01:01:59,477 [INFO] LoadServerPackagesThread:196 - End of LoadServerPackages Thread
+2025-02-03 01:02:00,887 [INFO] ThirdPartyModel:298 - Start build external matchings
+2025-02-03 01:02:00,898 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 952289800 Bytes (1073741824)
+2025-02-03 01:02:02,693 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2025-02-03 01:02:02,693 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: USART
+2025-02-03 01:02:02,693 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2025-02-03 01:02:02,694 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2025-02-03 01:02:02,694 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2025-02-03 01:02:02,710 [INFO] CodeGenerator:896 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.13.0.202411220809\\db\
+2025-02-03 01:02:03,691 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\alvar\Desktop\UNIVERSIDAD\6o\SETR1\Workspace\Practica1\MXTmpFiles\license.tmp_save
+2025-02-03 01:02:04,272 [INFO] ThirdPartyModel:316 - End build external matchings
+2025-02-03 01:02:04,370 [INFO] CheckServerUpdateThread:120 - End of CheckServer Thread
+2025-02-03 01:02:05,340 [INFO] CodeEngine:279 - Generated code: C:\Users\alvar\Desktop\UNIVERSIDAD\6o\SETR1\Workspace\Practica1\MXTmpFiles\license.tmp
+2025-02-03 01:02:05,942 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\alvar\Desktop\UNIVERSIDAD\6o\SETR1\Workspace\Practica1\MXTmpFiles\gpio.tmp_save
+2025-02-03 01:02:06,702 [INFO] CodeEngine:279 - Generated code: C:\Users\alvar\Desktop\UNIVERSIDAD\6o\SETR1\Workspace\Practica1\MXTmpFiles\gpio.tmp
+2025-02-03 01:02:07,073 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\alvar\Desktop\UNIVERSIDAD\6o\SETR1\Workspace\Practica1\Core\Src\stm32f1xx_it.c_save
+2025-02-03 01:02:08,210 [INFO] CodeEngine:279 - Generated code: C:\Users\alvar\Desktop\UNIVERSIDAD\6o\SETR1\Workspace\Practica1\Core\Src\stm32f1xx_it.c
+2025-02-03 01:02:08,256 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\alvar\Desktop\UNIVERSIDAD\6o\SETR1\Workspace\Practica1\Core\Inc\stm32f1xx_it.h_save
+2025-02-03 01:02:08,606 [INFO] CodeEngine:279 - Generated code: C:\Users\alvar\Desktop\UNIVERSIDAD\6o\SETR1\Workspace\Practica1\Core\Inc\stm32f1xx_it.h
+2025-02-03 01:02:08,690 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\alvar\Desktop\UNIVERSIDAD\6o\SETR1\Workspace\Practica1\Core\Src\stm32f1xx_hal_msp.c_save
+2025-02-03 01:02:09,162 [INFO] CodeEngine:279 - Generated code: C:\Users\alvar\Desktop\UNIVERSIDAD\6o\SETR1\Workspace\Practica1\Core\Src\stm32f1xx_hal_msp.c
+2025-02-03 01:02:09,210 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\alvar\Desktop\UNIVERSIDAD\6o\SETR1\Workspace\Practica1\MXTmpFiles\system.tmp_save
+2025-02-03 01:02:09,445 [INFO] CodeEngine:279 - Generated code: C:\Users\alvar\Desktop\UNIVERSIDAD\6o\SETR1\Workspace\Practica1\MXTmpFiles\system.tmp
+2025-02-03 01:02:09,554 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\alvar\Desktop\UNIVERSIDAD\6o\SETR1\Workspace\Practica1\Core\Inc\stm32f1xx_hal_conf.h_save
+2025-02-03 01:02:09,851 [INFO] CodeEngine:335 - Generated code: C:\Users\alvar\Desktop\UNIVERSIDAD\6o\SETR1\Workspace\Practica1\Core\Inc\stm32f1xx_hal_conf.h
+2025-02-03 01:02:10,007 [INFO] ApiDbMcu:508 - Load IP Config File for USART2
+2025-02-03 01:02:10,023 [INFO] ApiDbMcu:508 - Load IP Config File for RCC
+2025-02-03 01:02:10,101 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\alvar\Desktop\UNIVERSIDAD\6o\SETR1\Workspace\Practica1\Core\Inc\main.h_save
+2025-02-03 01:02:10,435 [INFO] CodeEngine:279 - Generated code: C:\Users\alvar\Desktop\UNIVERSIDAD\6o\SETR1\Workspace\Practica1\Core\Inc\main.h
+2025-02-03 01:02:10,498 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\alvar\Desktop\UNIVERSIDAD\6o\SETR1\Workspace\Practica1\Core\Src\main.c_save
+2025-02-03 01:02:10,810 [INFO] CodeEngine:279 - Generated code: C:\Users\alvar\Desktop\UNIVERSIDAD\6o\SETR1\Workspace\Practica1\Core\Src\main.c
+2025-02-03 01:02:12,071 [INFO] ProjectBuilder:3289 - Time for Copy HAL[1] : 634mS.
+2025-02-03 01:02:12,099 [INFO] ProjectBuilder:4876 - Project Generator version: 4.5.0-RC5
+2025-02-03 01:02:12,446 [INFO] ConfigFileManager:1579 - The Die is : DIE410
+2025-02-03 01:02:12,520 [INFO] ApiDbMcu:508 - Load IP Config File for FATFS
+2025-02-03 01:02:12,583 [INFO] ApiDbMcu:508 - Load IP Config File for FREERTOS
+2025-02-03 01:02:12,663 [INFO] ApiDbMcu:508 - Load IP Config File for USB_DEVICE

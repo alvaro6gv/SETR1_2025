@@ -1,0 +1,2 @@
+../Core/Src/LSM6DSL.c:6:6:LSM6DSL_Init	1
+../Core/Src/LSM6DSL.c:15:9:LSM6DSL_ReadAccel	1

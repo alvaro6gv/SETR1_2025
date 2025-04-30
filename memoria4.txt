@@ -1,0 +1,2 @@
+Led rojo = Mucha intensidad que pasa por el USB en un momento, lo ideal para el servomotor es comparar donde estamos y donde queremos llegar, y en vez de hacer la traslación
+completa, vamos sumando de poco en poco.

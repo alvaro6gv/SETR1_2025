@@ -1,0 +1,10 @@
+09:22:10 **** Incremental Build of configuration Debug for project NanoEdge_DataLog ****
+make -j8 all 
+arm-none-eabi-size  NanoEdge_DataLog.elf 
+   text	   data	    bss	    dec	    hex	filename
+  30860	    468	   2124	  33452	   82ac	NanoEdge_DataLog.elf
+Finished building: default.size.stdout
+ 
+
+09:22:11 Build Finished. 0 errors, 0 warnings. (took 315ms)
+

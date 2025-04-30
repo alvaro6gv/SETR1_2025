@@ -1,0 +1,148 @@
+10:22:53 **** Incremental Build of configuration Debug for project MeteoStationLCD ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:135:35: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  135 |                           sprintf(str, "MaxP: %.1fhPA", maxPress);
+      |                                   ^~~
+      |                                   |
+      |                                   uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:27:
+C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/stdio.h:250:18: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |                  ^
+../Core/Src/main.c:137:37: warning: pointer targets in passing argument 1 of 'lcd_print' differ in signedness [-Wpointer-sign]
+  137 |                           lcd_print(str);
+      |                                     ^~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+../Core/Inc/hd44780.h:23:21: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   23 | void lcd_print(char string[]);
+      |                ~~~~~^~~~~~~~
+../Core/Src/main.c:138:35: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  138 |                           sprintf(str, "MaxT:%.1fC MaxH:%.1f%%", maxTemp, maxHum);
+      |                                   ^~~
+      |                                   |
+      |                                   uint8_t * {aka unsigned char *}
+C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/stdio.h:250:18: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |                  ^
+../Core/Src/main.c:140:37: warning: pointer targets in passing argument 1 of 'lcd_print' differ in signedness [-Wpointer-sign]
+  140 |                           lcd_print(str);
+      |                                     ^~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+../Core/Inc/hd44780.h:23:21: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   23 | void lcd_print(char string[]);
+      |                ~~~~~^~~~~~~~
+../Core/Src/main.c:143:35: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  143 |                           sprintf(str, "MinP: %.1fhPA", minPress);
+      |                                   ^~~
+      |                                   |
+      |                                   uint8_t * {aka unsigned char *}
+C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/stdio.h:250:18: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |                  ^
+../Core/Src/main.c:145:37: warning: pointer targets in passing argument 1 of 'lcd_print' differ in signedness [-Wpointer-sign]
+  145 |                           lcd_print(str);
+      |                                     ^~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+../Core/Inc/hd44780.h:23:21: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   23 | void lcd_print(char string[]);
+      |                ~~~~~^~~~~~~~
+../Core/Src/main.c:146:35: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  146 |                           sprintf(str, "MinT:%.1fC MiH:%.1f%%", minTemp, minHum);
+      |                                   ^~~
+      |                                   |
+      |                                   uint8_t * {aka unsigned char *}
+C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/stdio.h:250:18: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |                  ^
+../Core/Src/main.c:148:37: warning: pointer targets in passing argument 1 of 'lcd_print' differ in signedness [-Wpointer-sign]
+  148 |                           lcd_print(str);
+      |                                     ^~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+../Core/Inc/hd44780.h:23:21: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   23 | void lcd_print(char string[]);
+      |                ~~~~~^~~~~~~~
+../Core/Src/main.c:151:27: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  151 |                   sprintf(str, "Pres:%.1fhmmHg", press/1.333);
+      |                           ^~~
+      |                           |
+      |                           uint8_t * {aka unsigned char *}
+C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/stdio.h:250:18: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |                  ^
+../Core/Src/main.c:153:29: warning: pointer targets in passing argument 1 of 'lcd_print' differ in signedness [-Wpointer-sign]
+  153 |                   lcd_print(str);
+      |                             ^~~
+      |                             |
+      |                             uint8_t * {aka unsigned char *}
+../Core/Inc/hd44780.h:23:21: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   23 | void lcd_print(char string[]);
+      |                ~~~~~^~~~~~~~
+../Core/Src/main.c:154:27: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  154 |                   sprintf(str, "T:%.1fF H:%.1f%%", (ths.temp*9/5)+32, ths.hum);
+      |                           ^~~
+      |                           |
+      |                           uint8_t * {aka unsigned char *}
+C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/stdio.h:250:18: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |                  ^
+../Core/Src/main.c:156:29: warning: pointer targets in passing argument 1 of 'lcd_print' differ in signedness [-Wpointer-sign]
+  156 |                   lcd_print(str);
+      |                             ^~~
+      |                             |
+      |                             uint8_t * {aka unsigned char *}
+../Core/Inc/hd44780.h:23:21: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   23 | void lcd_print(char string[]);
+      |                ~~~~~^~~~~~~~
+../Core/Src/main.c:159:27: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  159 |                   sprintf(str, "Pres: %.1fhPA", press);
+      |                           ^~~
+      |                           |
+      |                           uint8_t * {aka unsigned char *}
+C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/stdio.h:250:18: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |                  ^
+../Core/Src/main.c:161:29: warning: pointer targets in passing argument 1 of 'lcd_print' differ in signedness [-Wpointer-sign]
+  161 |                   lcd_print(str);
+      |                             ^~~
+      |                             |
+      |                             uint8_t * {aka unsigned char *}
+../Core/Inc/hd44780.h:23:21: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   23 | void lcd_print(char string[]);
+      |                ~~~~~^~~~~~~~
+../Core/Src/main.c:162:27: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  162 |                   sprintf(str, "T:%.1fC H:%.1f%%", ths.temp, ths.hum);
+      |                           ^~~
+      |                           |
+      |                           uint8_t * {aka unsigned char *}
+C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/stdio.h:250:18: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  250 | int     sprintf (char *__restrict, const char *__restrict, ...)
+      |                  ^
+../Core/Src/main.c:164:29: warning: pointer targets in passing argument 1 of 'lcd_print' differ in signedness [-Wpointer-sign]
+  164 |                   lcd_print(str);
+      |                             ^~~
+      |                             |
+      |                             uint8_t * {aka unsigned char *}
+../Core/Inc/hd44780.h:23:21: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   23 | void lcd_print(char string[]);
+      |                ~~~~~^~~~~~~~
+arm-none-eabi-gcc -o "MeteoStationLCD.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\alvar\Desktop\UNIVERSIDAD\6o\SETR1\Workspace\MeteoStationLCD\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MeteoStationLCD.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MeteoStationLCD.elf
+ 
+arm-none-eabi-size  MeteoStationLCD.elf 
+arm-none-eabi-objdump -h -S MeteoStationLCD.elf  > "MeteoStationLCD.list"
+   text	   data	    bss	    dec	    hex	filename
+  38436	    468	   2212	  41116	   a09c	MeteoStationLCD.elf
+Finished building: default.size.stdout
+ 
+Finished building: MeteoStationLCD.list
+ 
+
+10:22:54 Build Finished. 0 errors, 16 warnings. (took 1s.301ms)
+

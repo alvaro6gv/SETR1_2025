@@ -1,0 +1,17 @@
+10:19:07 **** Incremental Build of configuration Debug for project Practica7Altavoces ****
+make -j8 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Src/usbd_audio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L475xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Src/usbd_audio.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Src/usbd_audio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/AUDIO/Src/usbd_audio.o"
+arm-none-eabi-gcc -o "Practica7Altavoces.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Álvaro\Desktop\UNIVERSIDAD\6o\SETR1\Workspace\Practica7Altavoces\STM32L475VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica7Altavoces.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica7Altavoces.elf
+ 
+arm-none-eabi-size  Practica7Altavoces.elf 
+arm-none-eabi-objdump -h -S Practica7Altavoces.elf  > "Practica7Altavoces.list"
+   text	   data	    bss	    dec	    hex	filename
+  63016	    780	  21452	  85248	  14d00	Practica7Altavoces.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica7Altavoces.list
+ 
+
+10:19:09 Build Finished. 0 errors, 0 warnings. (took 1s.700ms)
+
