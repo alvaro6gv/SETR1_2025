@@ -2,7 +2,27 @@
 \usepackage[margin=2.5cm]{geometry}
 \usepackage{graphicx}
 \usepackage{enumitem}
+\usepackage[svgnames]{xcolor}
+\usepackage{listings}
 \usepackage[spanish]{babel}
+
+\lstset{
+	language=C, % Lenguaje: C
+	basicstyle=\ttfamily\small, % Fuente monoespaciada, tamaño pequeño
+	keywordstyle=\color{Blue}\bfseries, % Palabras clave en azul y negrita
+	stringstyle=\color{Red}, % Cadenas en rojo
+	commentstyle=\color{Green}, % Comentarios en verde
+	numbers=left, % Numeración de líneas a la izquierda
+	numberstyle=\tiny\color{Gray}, % Estilo de números de línea
+	stepnumber=1, % Numerar cada línea
+	numbersep=5pt, % Distancia de números al código
+	showspaces=false, % No mostrar espacios
+	showstringspaces=false, % No marcar espacios en cadenas
+	frame=single, % Marco alrededor del código
+	tabsize=4, % Tamaño de tabulación
+	breaklines=true, % Romper líneas largas
+	breakatwhitespace=true, % Romper solo en espacios
+}
 
 \begin{document}
 	\begin{titlepage}
@@ -53,10 +73,31 @@
 	
 	\section{Desarrollo de la práctica}
 	\subsection{Fase 1: Instalación del sistema de desarrollo STM32CubeIDE y del simulador QEMU}
-	En esta primera fase, vamos a instalar el sistema de desarrollo en nuestro equipo. Para ello, entramos en la página web del fabricante y procedemos a descargarnos, en mi caso, la versión 1.17.0. Una vez descargado el instalador, lo ejecutamos e instalamos. Al finalizar, abrimos la aplicación y nos falta un último paso, nos dirigimos a la pestaña \textit{Help > Eclipse Marketplace} y buscamos 
+	En esta primera fase, el objetivo es la correcta instalación del entorno de desarollo. En primer lugar, debemos visitar la página web de STMicroelectronics y descargarnos el software, en mi caso he descargado la versión 1.17.0. La instalación de este es muy sencillo, pues basta con abrir el ejecutable descargado y darle a siguiente hasta acabar el proceso.\\
+	
+	Una vez instalado, lo abrimos y procedemos a instalar el simulador QEMU para, valga la redundancia, simular el hardware de esta práctica. Para instalarlo, nos vamos al menú superior y pulsamos en: \textit{Help $\rightarrow$ Eclipse Marketplace} y dentro de esta venta buscamos \textit{GNU MCU Eclipse} y el resultado es lo que debemos instalar. Por último, debemos ir al enlace de GitHub del enunciado de la práctica donde están los paquete de simulación para los ARM Cortex e instalarlos en nuestro equipo. Con estos pasos ya estaría todo preparado para programar.
 	
 	\subsection{Fase 2: Encender un LED}
-	podemos comenzar con la segunda fase tras proceder con la correcta instalación de el entorno de desarrollo y los ajustes necesarios para el funcionamiento de este, se nos propone probar su funcionamiento desarrollando un simple programa que nos permite encender y apagar un LED de la placa en cuestión. En la guía nos indica cómo crear un proyecto para este caso y la placa que debemos usar, que se trata de la \textbf{NUCLEO-F103RB}. Es importante que cuando al crear el proyecto nos pregunte sobre si queremos inicializar los periféricos debemos decir que sí, de esta forma existe un determinado pin, como el del LED que queremos encender, se coloca por defecto como salida.
+	Tras proceder con la correcta instalación del entorno de desarrollo y los ajustes necesarios para el funcionamiento de este, se nos propone probar su funcionamiento desarrollando un simple programa que nos permite encender y apagar un LED de la placa que estamos usando para comprobar que todo funciona correctamente. En la guía nos indica cómo crear un proyecto para este caso y la placa que debemos usar, que se trata de la \textbf{NUCLEO-F103RB}. Es importante que cuando al crear el proyecto nos pregunte sobre si queremos inicializar los periféricos debemos decir que sí, de esta forma existe un determinado pin, como el del LED que queremos encender, se coloca por defecto como salida.\\
+	
+	Una vez creado el proyecto, disponemos de una funcionalidad que nos permite generar el código de configuración de nuestro microcontrolador en base a si están los valores por defecto o si hemos modificado elementos como el reloj o los GPIO. Es importante que si tenemos una configuración y por cualquier motivo hemos tenido que modificar por ejemplo la frecuencia del reloj, debemos volver a generar el código para que las modificaciones se vean efectuadas. Para esta fase, no vamos a modificar nada de la configuración inicial, por lo que pulsamos en \textit{Project $\rightarrow$ Generate Code} para generar nuestro fichero de configuración.\\
+	
+	Procedemos a escribir el código en el fichero \textit{main.c}. Debemos escribir el código entre los comentarios de \footnotesize\textcolor{DarkGreen}{{\textbf{/*USER CODE BEGIN… *//* USER CODE END … *}}} \large para evitar que, en caso de que se vuelva a hacer, cuando generemos el código de configuración de nuestro proyecto se pierda.\\
+	
+	La estructura es sencilla, primero los includes y luego el código. Entonces, arriba del main, en la sección de los includes debemos escribir lo siguiente:
+	\begin{lstlisting}
+	void SystemClock_Config(void); // sirve para inicializar el reloj
+	static void MX_GPIO_Init(void); // sirve para inicializar los GPIO
+	static void MX_USART2_UART_Init(void); // sirve para inicializar un puerto serie
+	\end{lstlisting}
+	
+	Posterior a esto debemos ir a nuestra función main, donde se encuentra el while(1) tan importante y fundamental de los microcontroladores en el que debemos escribir nuestro código:
+	\begin{lstlisting}
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, 0); pone a cero el LED
+	HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13); devuelve el valor del boton
+	\end{lstlisting}
+
+	
 	
 	\subsection{Fase 3: Utilizar la interrupción de pulsar botón para cambiar el estado del LED}
 	
