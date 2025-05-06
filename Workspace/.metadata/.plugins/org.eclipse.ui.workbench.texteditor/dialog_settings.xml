@@ -6,8 +6,12 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="true"/>
-		<item key="selection" value="WHILE"/>
+		<item key="selection" value="Callback"/>
 		<list key="findhistory">
+			<item value="callback"/>
+			<item value="back"/>
+			<item value="call"/>
+			<item value="include"/>
 			<item value="while"/>
 			<item value="2U"/>
 			<item value="begin 4"/>
@@ -19,10 +23,6 @@
 			<item value="periodic"/>
 			<item value="user code begin 2"/>
 			<item value="private variables"/>
-			<item value="audio_periodic"/>
-			<item value="AUDIO_PeriodicTC_FS"/>
-			<item value="packet"/>
-			<item value="audio_output_packet"/>
 		</list>
 		<list key="replacehistory">
 		</list>

@@ -60,8 +60,8 @@ all: main-build
 main-build: Practica1.elf secondary-outputs
 
 # Tool invocations
-Practica1.elf Practica1.map: $(OBJS) $(USER_OBJS) C:\Users\alvar\Desktop\UNIVERSIDAD\6o\SETR1\Workspace\Practica1\STM32F103RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Practica1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\alvar\Desktop\UNIVERSIDAD\6o\SETR1\Workspace\Practica1\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Practica1.elf Practica1.map: $(OBJS) $(USER_OBJS) C:\Users\Álvaro\Desktop\UNIVERSIDAD\6o\ año\SETR1\SETR1_2025\Practica1\STM32F103RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Practica1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\Álvaro\Desktop\UNIVERSIDAD\6o año\SETR1\SETR1_2025\Practica1\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

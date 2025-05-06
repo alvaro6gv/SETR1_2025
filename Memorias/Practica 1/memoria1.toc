@@ -1,12 +1,12 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {section}{\numberline {1}Objetivos}{2}{}%
-\contentsline {subsection}{\numberline {1.1}Académico}{2}{}%
-\contentsline {subsection}{\numberline {1.2}Práctico}{2}{}%
-\contentsline {section}{\numberline {2}Introducción}{2}{}%
-\contentsline {section}{\numberline {3}Desarrollo de la práctica}{3}{}%
-\contentsline {subsection}{\numberline {3.1}Fase 1: Instalación del sistema de desarrollo STM32CubeIDE y del simulador QEMU}{3}{}%
-\contentsline {subsection}{\numberline {3.2}Fase 2: Encender un LED}{3}{}%
-\contentsline {subsection}{\numberline {3.3}Fase 3: Utilizar la interrupción de pulsar botón para cambiar el estado del LED}{4}{}%
-\contentsline {subsection}{\numberline {3.4}Fase 4: Hacer que le LED se encienda y apague a un determinado ritmo}{4}{}%
-\contentsline {section}{\numberline {4}Contestación de preguntas}{4}{}%
-\contentsline {section}{\numberline {5}Conclusiones}{4}{}%
+\contentsline {section}{\numberline {1}Objetivos}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Académico}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Práctico}{2}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Introducción}{2}{section.2}%
+\contentsline {section}{\numberline {3}Desarrollo de la práctica}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Fase 1: Instalación del sistema de desarrollo STM32CubeIDE y del simulador QEMU}{3}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Fase 2: Encender un LED}{3}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Fase 3: Utilizar la interrupción de pulsar botón para cambiar el estado del LED}{5}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Fase 4: Hacer que le LED se encienda y apague a un determinado ritmo}{7}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Contestación de preguntas}{7}{section.4}%
+\contentsline {section}{\numberline {5}Conclusiones}{9}{section.5}%
