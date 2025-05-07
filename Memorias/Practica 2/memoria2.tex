@@ -10,12 +10,15 @@
 \usepackage{changepage}
 \usepackage{enumitem}
 \usepackage{capt-of}
+\usepackage[utf8]{inputenc}    % Para codificación UTF-8
+\usepackage[T1]{fontenc}       % Para que se vean bien las letras acentuadas y ñ
+\usepackage[spanish]{babel}    % Para traducción al español
 
 \lstset{
 	language=C, % Lenguaje: C
 	basicstyle=\ttfamily\small, % Fuente monoespaciada, tamaño pequeño
 	keywordstyle=\color{Blue}\bfseries, % Palabras clave en azul y negrita
-	stringstyle=\color{Red}, % Cadenas en rojo
+	stringstyle=\color{MediumVioletRed}, % Cadenas en rojo
 	commentstyle=\color{Green}, % Comentarios en verde
 	numbers=left, % Numeración de líneas a la izquierda
 	numberstyle=\tiny\color{Gray}, % Estilo de números de línea
@@ -160,14 +163,144 @@
 	
 	\section{Desarrollo de la práctica}
 	\subsection{Fase 1: Usar el display HD44780 y empezar a manejar la placa de la asignatura.}
-	Lo primero que haremos será colocar el shield del display sobre la placa, teniendo en cuenta la orientación de esta para que los pines vayan en su sitio, para que sea más fácil, podemos retirar el "embellecedor" del botón azul para que no haga de escalón y no esté la placa puesta de aquella manera. Una vez colocada, conectaremos la placa a nuestro equipo usando el USB y conectándolo a la entrada \textit{USB ST-LINK} y procederemos a crear un nuevo proyecto y cuando nos salga la ventana de \textit{Target Selection} seleccionamos \textit{Board Selector} y buscamos nuestra placa, colocamos el nombre de nuestro proyecto y cuando nos pregunte si queremos inicializar los periféricos diremos que sí. Cuando se cree, se llevará un proceso que puede tardar bastante pues se está descargando las librerías del generador de código.
+	Lo primero que haremos será colocar el shield del display sobre la placa, teniendo en cuenta la orientación de esta para que los pines vayan en su sitio, para que sea más fácil, podemos retirar el "embellecedor" del botón azul para que no haga de escalón y no esté la placa puesta de aquella manera. Una vez colocada, prepararemos el material necesario para tras realizar la fase uno, conectar la placa a nuestro equipo usando el USB y la entrada \textit{USB ST-LINK}. Procederemos a crear un nuevo proyecto y cuando nos salga la ventana de \textit{Target Selection} seleccionamos \textit{Board Selector} y buscamos nuestra placa, colocamos el nombre de nuestro proyecto y cuando nos pregunte si queremos inicializar los periféricos diremos que sí. Cuando se cree, se llevará un proceso que puede tardar bastante pues se está descargando las librerías del generador de código.\\
+	
+	Una vez finalizado el proceso anterior, lo primero que vamos a hacer es renombrar los pines del microcontrolador que están conectados al display LCD del shield de Arduino para que su denominación corresponda con el que se pone en la librería del LCD que más adelante copiaremos a nuestro proyecto, por lo que cambiaremos la funcionalidad de los pines a \textit{GPIO\_OUTPUT}. Para saber qué pines cambiar y qué nombres colocarles debemos seguir la siguiente tabla:
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{tablapines.png}
+		\captionof{figure}{Pines para usar la librería del display LCD.}
+	\end{center}
+	
+	A continuación, vamos a seleccionar las librerías LL para manejar los GPIO, esto es
+	necesario pues el fichero que vamos a insertar que maneja el LCD utiliza las funciones de la librería LL para los GPIO. Seleccionamos \textit{Advanced Settings} y después pulsamos sobre la columna HAL en la fila de GPIO y lo cambiamos a LL.\\
+	
+	Una vez hecho esto, generamos el código e importamos el fichero .c (código) y .h (cabecera) de la librería del LCD a nuestro proyecto, simplemente arrastrando el fichero hasta la carpeta en el explorador de archivos de nuestro IDE. Debemos importar a nuestro \textbf{main.c} la cabecera de la librería usando la siguiente sentencia:
+	\begin{lstlisting}
+	#include "hd44780.h"
+	\end{lstlisting}
+	
+	Ahora es turno de probar si funciona correctamente el display, para ello debemos usar el siguiente código antes del \textit{while(1)} para que se inicialice el LCD y se escriba un mensaje:
+	\begin{lstlisting}
+	lcd_reset();
+	lcd_display_settings(1,0,0);
+	lcd_clear();
+	lcd_print("Hola mundo");
+	\end{lstlisting}
+	
+	Ahora es momento de conectar nuestra placa al ordenador. Tras conectarla nos pedirá que instalemos el driver del depurador de STM a nuestro PC. Una vez instalado compilaremos nuestro proyecto pulsando sobre \textit{Project $\rightarrow$ Build Project} y posteriormente en \textit{Run $\rightarrow$ Debug Configurations $\rightarrow$ Doble click sobre \textit{STM32 Cortex-M C/C++ Application} $\rightarrow$ \textit{Debug}} y se ejecutará el código, pero... sale ennegrecido. ¿Cómo lo solucionamos? Simplemente debemos colocar la instrucción:
+	\begin{lstlisting}
+		LL_GPIO_SetOutputPin(GPIOA, Led_LCD_Pin);
+	\end{lstlisting}
+	
+	En mi caso, mi display LCD era nuevo a estrenar, entonces he tenido que ajustar el potenciómetro del contraste para que se vea correctamente.\\
+	
+	A continuación, vamos a definir un nuevo carácter que se pueda visualizar en el LCD siguiendo este código:
+	\begin{lstlisting}
+	lcd_cgram_address(0); se selecciona la direccion 0 de la CGRAM, patron con codigo 0
+	lcd_write(0x15, 1); se va cargando con los bytes del patron de cada fila de la CGRAM
+	lcd_write(0x15, 1);
+	lcd_write(0xe, 1);
+	lcd_write(0x4, 1);
+	lcd_write(0x4, 1);
+	lcd_write(0xa, 1);
+	lcd_write(0x11, 1);
+	lcd_write(0x00, 1);
+	\end{lstlisting}
+	\begin{lstlisting}
+	lcd_cgram_address(8); se selecciona la direccion 8 de la CGRAM, patron con codigo 1
+	lcd_write(0x4, 1); se va cargando con los bytes del patron de cada fila de la CGRAM
+	lcd_write(0x4, 1);
+	lcd_write(0xe, 1);
+	lcd_write(0x15, 1);
+	lcd_write(0x15, 1);
+	lcd_write(0xa, 1);
+	lcd_write(0xa, 1);
+	lcd_write(0x00, 1);
+	lcd_display_address(0); //Vuelve a direccionar la DDRAM para visualizar datos en pantalla
+	\end{lstlisting}
+	
+	En esas líneas de programa se definen dos nuevos patrones o caracteres, cuyo código serían el 0 y el 1 (son los punteros a dichos patrones), es decir, como si fueran dos nuevos caracteres con códigos ASCII 0 y 1. Aquí cabe señalar que para muchos displays LCD gráficos (no para este HD44780) existe software de ayuda que permite el diseño de patrones y de pantallas. Vamos a insertar esas líneas de código en el proyecto actual, debajo de la última línea en la que hayamos escrito en el LCD, y antes del while(1). Insertemos ahora, dentro del while(1), las siguientes líneas de código:
+	\begin{lstlisting}
+	moveToXY(1,7); //situa el cursor en la posicion fila 1 columna 7, primer muneco
+	lcd_write(0,1); //escribe el nuevo patron 0 en la DDRAM
+	moveToXY(1,8); //situa el cursor en la posicion fila 1 columna 7, segundo muneco
+	lcd_write(0,1);
+	HAL_Delay(1000); //retraso de 1 segundo para dejar ver la figura en pantalla
+	moveToXY(1,7);
+	lcd_write(1,1); //escribe el nuevo patron 0 en la DDRAM
+	moveToXY(1,8);
+	lcd_write(1,1);
+	HAL_Delay(1000);
+	\end{lstlisting}
+	
+	Tras estos pasos, hemos dibujado en pantalla a dos monigotes haciendo gimnasia con los brazos y las piernas y acabado la fase 1.
 	
 	\subsection{Fase 2: Repetir la Fase 2 y 4 de la práctica 1 con la nueva placa.}
+	Para llevar a cabo esta fase dos de la práctica uno en la que se enciende y se apaga un LED (como por ejemplo el que podemos identificar como \textit{LED2}) de la placa mediante la pulsación de un botón (en nuestro caso el azul que viene incluido en la práctica y que podemos identificar como \textit{BUTTON\_EXTI13}) como en la práctica 1, simplemente debemos incluir este código dentro del while(1) en nuestro fichero \textbf{main.c}:
+	\begin{lstlisting}
+	if (LL_GPIO_IsInputPinSet(BUTTON_EXTI13_GPIO_Port, BUTTON_EXTI13_Pin))
+		LL_GPIO_SetOutputPin(LED2_GPIO_Port, LED2_Pin);
+	else
+		LL_GPIO_ResetOutputPin(LED2_GPIO_Port, LED2_Pin); 
+	\end{lstlisting}
+	
+	Pero ocurre un problema, debido a los \textit{HAL\_Delay(1000)} impiden que cuando pulsamos el botón el LED se apague inmediatamente. Para ello debemos tratar con la interrupción del botón o la del Systick, o en nuestro caso implementar algo como esto:
+	\begin{lstlisting}
+	int contador=0, estado_mu=0;
+	while (1) {
+	/* USER CODE END WHILE */
+	
+	/* USER CODE BEGIN 3 */
+	//TAREA A
+	contador++;
+	if(contador==10 && estado_mu==0){
+		moveToXY(1,7); //situa el cursor en la posicion fila 1 columna 7, primer muneco
+		lcd_write(0,1); //escribe el nuevo patron 0 en la DDRAM
+		moveToXY(1,8); //situa el cursor en la posicion fila 1 columna 8, segundo muneco
+		lcd_write(0,1);
+		contador = 0;
+		estado_mu = 1;
+	}
+	
+	if(contador==10 && estado_mu==1){
+		moveToXY(1,7);
+		lcd_write(1,1); //escribe el nuevo patron 0 en la DDRAM
+		moveToXY(1,8);
+		lcd_write(1,1);
+		contador = 0;
+		estado_mu = 0;
+	}
+	
+	if (LL_GPIO_IsInputPinSet(BUTTON_EXTI13_GPIO_Port, BUTTON_EXTI13_Pin))
+	LL_GPIO_SetOutputPin(LED2_GPIO_Port, LED2_Pin);
+	else
+	LL_GPIO_ResetOutputPin(LED2_GPIO_Port, LED2_Pin);
+	HAL_Delay(100);
+}
+	\end{lstlisting}
+	
+	Para repetir la fase cuatro de la práctica uno, nos basta con copiar el código proporcionado en el boletín de la práctica para escribirlo en el fichero \textit{stm32l4xx\_it.c} en la función \textit{SysTick\_Handler(void)} y con esto quedaría acabada esta fase.
 	
 	\subsection{Fase 3: Repetir la fase 1 de esta práctica, pero usando librerías HAL.}
+	Esta fase es sencilla, ya que nos proporcionan las instrucciones para tratar con la librería HAL, que son estas:
+	\begin{lstlisting}
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, 0); pone a cero el pin 5 del puerto A
+	HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13); devuelve el valor del pin 13 del puerto C
+	HAL_GPIO_TogglePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin) complementa un pin
+	\end{lstlisting}
+	\vspace{1em}
 
-	\section{Contestación de preguntas}
+	Un ejemplo de cómo se tratan sería el siguiente en el que están estas dos instrucciones que son \textbf{equivalentes}, solo que estamos tratando con instrucciones HAL:
+	 \begin{lstlisting}
+	 	LL_GPIO_SetOutputPin(LED2_GPIO_Port, LED2_Pin);
+	 	
+	 	HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, 1);
+	 \end{lstlisting}
+	 \vspace{1em}
+	 
+	 Con esto, ya estaría acabada esta fase y por ende esta práctica dos.
 	
 	\section{Conclusiones}
+	En mi opinión he disfrutado con esta práctica ya que he conseguido los objetivos propuestos y he aprendido mediante la realización de todas las fases a tratar con un display LCD para desempeñarlo en futuros proyectos puesto que es un elemento muy usado para mostrar información. Esta práctica ayuda también porque es muy visual y proporciona una sensación de satisfacción cuando ves que salen las cosas.
 
 \end{document}

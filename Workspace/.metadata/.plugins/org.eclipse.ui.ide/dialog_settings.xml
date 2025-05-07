@@ -7,6 +7,7 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/home/alvaro/Escritorio/UNIVERSIDAD/6/SETR1/Practica2"/>
 			<item value="C:\Users\Álvaro\Desktop\Practica2Fase3"/>
 			<item value="C:\Users\Álvaro\Desktop\PWM_Mot_Servo"/>
 		</list>
