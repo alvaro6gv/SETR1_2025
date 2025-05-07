@@ -3,9 +3,9 @@
 \contentsline {subsection}{\numberline {1.1}Académico}{2}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Práctico}{2}{subsection.1.2}%
 \contentsline {section}{\numberline {2}Introducción}{2}{section.2}%
-\contentsline {section}{\numberline {3}Desarrollo de la práctica}{3}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Fase 1: Usar el display HD44780 y empezar a manejar la placa de la asignatura.}{3}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Fase 2: Repetir la Fase 2 y 4 de la práctica 1 con la nueva placa.}{3}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Fase 3: Repetir la fase 1 de esta práctica, pero usando librerías HAL.}{3}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Contestación de preguntas}{3}{section.4}%
-\contentsline {section}{\numberline {5}Conclusiones}{3}{section.5}%
+\contentsline {section}{\numberline {3}Desarrollo de la práctica}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Fase 1: Usar el display HD44780 y empezar a manejar la placa de la asignatura.}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Fase 2: Repetir la Fase 2 y 4 de la práctica 1 con la nueva placa.}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Fase 3: Repetir la fase 1 de esta práctica, pero usando librerías HAL.}{5}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Contestación de preguntas}{5}{section.4}%
+\contentsline {section}{\numberline {5}Conclusiones}{5}{section.5}%
